@@ -18,5 +18,5 @@ func calculateHash(toBeHashed string) string{
 func main() {
 	calculateHash("test1")
 	calculateHash("test1")
-	calculateHash("testl")
+	calculateHash("test2")
 }
