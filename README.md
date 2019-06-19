@@ -15,3 +15,8 @@
 - 创建block(创世区块)
 - 创建blockchain(链式结构)
 - 创建http server
+
+#创建 Block
+- 新建工程demochain
+- 创建block文件
+- 创建block结构体与相关函数
