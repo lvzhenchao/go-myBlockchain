@@ -9,3 +9,9 @@
 - 链式结构
 - 实现一个简单的http server, 对外暴露访问接口
 - 效果展示
+
+#步骤
+
+- 创建block(创世区块)
+- 创建blockchain(链式结构)
+- 创建http server
