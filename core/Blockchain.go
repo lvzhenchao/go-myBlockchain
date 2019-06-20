@@ -1,6 +1,9 @@
-package demochain
+package core
 
-import "log"
+import (
+	"fmt"
+	"log"
+)
 
 type Blockchain struct {
 	Blocks []*Block
@@ -13,7 +16,7 @@ func NewBlockchain() *Blockchain{
 	return &blockchain
 }
 
-func (bc *Blockchain) sendData(data string) {
+func (bc *Blockchain) SendData(data string) {
 	preBlock := bc.Blocks[len(bc.Blocks) -1 ]
 	newBlock := GenerateNewBlock(*preBlock, data)
 	bc.ApendBlock(&newBlock)
@@ -26,6 +29,16 @@ func (bc *Blockchain) ApendBlock(newBlock *Block){
 		log.Fatal("invalid block")
 	}
 
+}
+
+func(bc *Blockchain) Prinf(){
+	for _, block := range bc.Blocks {
+		fmt.Printf("Index： %d\n", block.Index)
+		fmt.Printf("Prev.Hash： %s\n", block.PrevBlockHash)
+		fmt.Printf("Curr.Hash： %s\n", block.Hash)
+		fmt.Printf("Data： %s\n", block.Data)
+		fmt.Printf("Timestamp： %d", block.Timestamp)
+	}
 }
 
 func isValid(newBlock Block, oldBlock Block){
