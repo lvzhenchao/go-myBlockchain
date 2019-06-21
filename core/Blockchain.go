@@ -17,7 +17,7 @@ func NewBlockchain() *Blockchain{
 }
 
 func (bc *Blockchain) SendData(data string) {
-	preBlock := bc.Blocks[len(bc.Blocks) -1 ]
+	preBlock := bc.Blocks[len(bc.Blocks) -1]
 	newBlock := GenerateNewBlock(*preBlock, data)
 	bc.ApendBlock(&newBlock)
 }
