@@ -5,6 +5,6 @@ import "mychain/core"
 func main(){
 	bc := core.NewBlockchain()
 	bc.SendData("Send 1 BTC to lzc")
-	bc.SendData("Send ! EOC to Jack")
-	bc.Prinf()
+	bc.SendData("Send 2 EOC to Jack")
+	bc.Print()
 }

@@ -28,8 +28,9 @@ func calculateHash(b Block) string {
 func GenerateNewBlock(preBlock Block, data string) Block {
 	newBlock := Block{}
 	newBlock.Index = preBlock.Index + 1
-	newBlock.Timestamp = time.Now().Unix()
 	newBlock.PrevBlockHash = preBlock.Hash
+	newBlock.Timestamp = time.Now().Unix()
+	newBlock.Data = data
 	newBlock.Hash = calculateHash(newBlock)
 
 	return newBlock
