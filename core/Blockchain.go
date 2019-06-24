@@ -9,6 +9,7 @@ type Blockchain struct {
 	Blocks []*Block
 }
 
+//创建新的区块链
 func NewBlockchain() *Blockchain{
 	genesisBlock := GenerateGenesisBlock()
 	blockchain := Blockchain{}
@@ -37,17 +38,6 @@ func (bc *Blockchain) ApendBlock(newBlock *Block){
 
 }
 
-//打印
-func(bc *Blockchain) Print(){
-	for _, block := range bc.Blocks {
-		fmt.Printf("Index： %d\n", block.Index)
-		fmt.Printf("Prev.Hash： %s\n", block.PrevBlockHash)
-		fmt.Printf("Curr.Hash： %s\n", block.Hash)
-		fmt.Printf("Data： %s\n", block.Data)
-		fmt.Printf("Timestamp： %d\n", block.Timestamp)
-		fmt.Println()
-	}
-}
 
 //验证
 func isValid(newBlock Block, oldBlock Block) bool {
@@ -62,4 +52,16 @@ func isValid(newBlock Block, oldBlock Block) bool {
 
 	}
 	return true
+}
+
+//打印
+func(bc *Blockchain) Print(){
+	for _, block := range bc.Blocks {
+		fmt.Printf("Index： %d\n", block.Index)
+		fmt.Printf("Prev.Hash： %s\n", block.PrevBlockHash)
+		fmt.Printf("Curr.Hash： %s\n", block.Hash)
+		fmt.Printf("Data： %s\n", block.Data)
+		fmt.Printf("Timestamp： %d\n", block.Timestamp)
+		fmt.Println()
+	}
 }
